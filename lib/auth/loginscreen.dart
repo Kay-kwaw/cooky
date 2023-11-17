@@ -1,4 +1,5 @@
 
+import 'package:cookify/auth/products/inventory.dart';
 import 'package:flutter/material.dart';
 
 class LoginWidget extends StatefulWidget {
@@ -24,11 +25,11 @@ class _LoginWidgetState extends State<LoginWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Tab(
+    return GestureDetector(
       child: Scaffold(
-        backgroundColor: Color.fromARGB(255, 143, 128, 128),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
         body: SafeArea(
-          top: true,
+          // top: true,
           child: Stack(
             children: [
               const Align(
@@ -37,7 +38,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                   'Get back in the \nKitchen',
                   style: TextStyle(
                         fontFamily: 'Readex Pro',
-                        color: Color(0xFFEFEFEF),
+                        color: Color.fromARGB(255, 0, 0, 0),
                         fontSize: 40
                       ),
                 ),
@@ -50,7 +51,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     'Access your wonderful recipes by loggin in.',
                     style:TextStyle(
                           fontFamily: 'Readex Pro',
-                          color: Color.fromARGB(255, 212, 212, 212),
+                          color: Color.fromARGB(255, 125, 124, 124),
                           fontSize: 18
                         ),
                   ),
@@ -60,7 +61,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                 alignment: AlignmentDirectional(-0.02, -0.27),
                 child: Icon(
                   Icons.soup_kitchen_outlined,
-                  color:Colors.white,
+                  color:Color.fromARGB(255, 0, 0, 0),
                   size: 70,
                 ),
               ),
@@ -77,14 +78,14 @@ class _LoginWidgetState extends State<LoginWidget> {
                       hintStyle: TextStyle(),
                       enabledBorder: UnderlineInputBorder(
                         borderSide: const BorderSide(
-                          color: Colors.white70,
+                          color: Color.fromARGB(179, 99, 99, 99),
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       focusedBorder: UnderlineInputBorder(
                         borderSide: const BorderSide(
-                          color: Colors.white70,
+                          color: Color.fromARGB(179, 75, 75, 75),
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(8),
@@ -118,30 +119,30 @@ class _LoginWidgetState extends State<LoginWidget> {
                     obscureText: false,
                     decoration: InputDecoration(
                       labelText: 'password',
-                      labelStyle: TextStyle(),
+                      labelStyle: const TextStyle(),
                       hintStyle: TextStyle(),
                       enabledBorder: UnderlineInputBorder(
                         borderSide: const BorderSide(
-                          color: Colors.white70,
+                          color: Color.fromARGB(179, 119, 118, 118),
                           width: 2,
                         ),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      focusedBorder: OutlineInputBorder(
+                      focusedBorder: UnderlineInputBorder(
                         borderSide: const BorderSide(
-                          color: Colors.white70,
+                          color: Color.fromARGB(179, 108, 108, 108),
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      errorBorder: OutlineInputBorder(
+                      errorBorder: UnderlineInputBorder(
                         borderSide: const BorderSide(
                           color: Colors.black,
                           width: 2,
                         ),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      focusedErrorBorder: OutlineInputBorder(
+                      focusedErrorBorder: UnderlineInputBorder(
                         borderSide: const BorderSide(
                           color: Colors.red,
                           width: 2,
@@ -149,14 +150,27 @@ class _LoginWidgetState extends State<LoginWidget> {
                         borderRadius: BorderRadius.circular(8),
                       ),
                     ),
-                    style:TextStyle(),
+                    style:const TextStyle(),
                     // validator:
                     //     _model.textController3Validator.asValidator(context),
                   ),
                 ),
               ),
+              const Align(
+                  alignment: AlignmentDirectional(-0.03, 0.51),
+                  child: Text(
+
+                    'Forgotten Password!',
+                    style: TextStyle(
+                          fontFamily: 'Readex Pro',
+                          color: Color.fromARGB(255, 6, 6, 6),
+                          fontSize: 16
+                        ),
+                  ),
+                ),
+              
               Align(
-                alignment: AlignmentDirectional(-0.02, 0.76),
+                alignment: const AlignmentDirectional(-0.02, 0.76),
                 child: OutlinedButton(
                   style: OutlinedButton.styleFrom(
                     primary: Colors.white,
@@ -166,31 +180,29 @@ class _LoginWidgetState extends State<LoginWidget> {
                     ),
                   ),
                   onPressed: () {
-                    print('Button pressed ...');
+                    Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ProductsWidget()),
+            );
                   },
                  child: const Text("Sign In"),
                 ),
               ),
-               InkWell(
-                onTap: () {
-                  print('InkWell tapped ...');     
-                },
-                child: const Align(
+               const Align(
                   alignment: AlignmentDirectional(-0.03, 0.91),
                   child: Text(
 
                     'Do not Have an Account? Sign Up!',
                     style: TextStyle(
                           fontFamily: 'Readex Pro',
-                          color: Colors.white,
+                          color: Color.fromARGB(255, 6, 6, 6),
+                          fontSize: 16
                         ),
                   ),
                 ),
-              ),
-            ],
+              ]),
           ),
         ),
-      ),
-    );
+      );
   }
 }

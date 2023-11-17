@@ -1,6 +1,7 @@
 import 'package:cookify/auth/SignUpScreen.dart';
 import 'package:cookify/auth/loginscreen.dart';
 import 'package:cookify/auth/products/inventory.dart';
+import 'package:cookify/auth/products/inventorydetails.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const SignUpScreen(),
+      home: const Product8Widget(),
     );
   }
 }
