@@ -26,7 +26,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Scaffold(
-        backgroundColor: Color.fromARGB(255, 0, 0, 0),
+        backgroundColor: Color.fromARGB(255, 143, 128, 128),
         body: SafeArea(
           top: true,
           child: Stack(
@@ -64,64 +64,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   size: 70,
                 ),
               ),
-//               Align(
-//                 alignment: AlignmentDirectional(0.00, 0.48),
-//                 child: Padding(
-//                   padding: EdgeInsetsDirectional.fromSTEB(18, 0, 18, 0),
-//                   child: TextFormField(
-//                     decoration: InputDecoration(
-//                       labelText: 'password',
-//                       labelStyle: TextStyle(),
-//                       hintStyle:TextStyle(),
-//                       enabledBorder: OutlineInputBorder(
-//                         borderSide: const BorderSide(
-//                           color: Colors.white70,
-//                           width: 2,
-//                         ),
-//                         borderRadius: BorderRadius.circular(8),
-//                       ),
-//                       focusedBorder: OutlineInputBorder(
-//                         borderSide: BorderSide(
-//                           color: Colors.white70,
-//                           width: 2,
-//                         ),
-//                         borderRadius: BorderRadius.circular(8),
-//                       ),
-//                       errorBorder: OutlineInputBorder(
-//                         borderSide: BorderSide(
-//                           color: Colors.white70,
-//                           width: 2,
-//                         ),
-//                         borderRadius: BorderRadius.circular(8),
-//                       ),
-//                       focusedErrorBorder: OutlineInputBorder(
-//                         borderSide: BorderSide(
-//                           color: Colors.white70,
-//                           width: 2,
-//                         ),
-//                         borderRadius: BorderRadius.circular(8),
-//                       ),
-//                       suffixIcon: InkWell(
-//                         onTap: () {},
-                     
-// //                         child: Icon(
-// // ,
-// //                           color: Color(0xFFA09F9F),
-// //                           size: 20,
-// //                         ),
-//                       ),
-//                     ),
-//                     style:TextStyle(),
-//                     keyboardType: TextInputType.visiblePassword,
-//                     // validator:
-//                     //     _model.textController1Validator.asValidator(context),
-//                   ),
-//                 ),
-//               ),
               Align(
                 alignment: AlignmentDirectional(0.00, 0.00),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(18, 0, 18, 0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(18, 0, 18, 0),
                   child: TextFormField(
                     autofocus: true,
                     obscureText: false,
@@ -132,21 +78,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       enabledBorder: OutlineInputBorder(
                         borderSide: const BorderSide(
                           color: Colors.white70,
-                          width: 2,
+                          width: 1,
                         ),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderSide: const BorderSide(
                           color: Colors.white70,
-                          width: 2,
+                          width: 1,
                         ),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       errorBorder: OutlineInputBorder(
                         borderSide: const BorderSide(
                           color:Colors.white,
-                          width: 2,
+                          width: 1,
                         ),
                         borderRadius: BorderRadius.circular(8),
                       ),
@@ -175,16 +121,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       labelStyle: TextStyle(),
                       hintStyle: TextStyle(),
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Colors.white70,
                           width: 2,
                         ),
                         borderRadius: BorderRadius.circular(8),
                       ),
                       focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
+                        borderSide: const BorderSide(
                           color: Colors.white70,
-                          width: 2,
+                          width: 1,
                         ),
                         borderRadius: BorderRadius.circular(8),
                       ),
@@ -212,20 +158,33 @@ class _SignUpScreenState extends State<SignUpScreen> {
               Align(
                 alignment: AlignmentDirectional(-0.02, 0.76),
                 child: OutlinedButton(
+                  style: OutlinedButton.styleFrom(
+                    primary: Colors.white,
+                    backgroundColor: const Color.fromARGB(255, 14, 12, 17),
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(8)),
+                    ),
+                  ),
                   onPressed: () {
                     print('Button pressed ...');
                   },
-                 child: Text("Sign Up"),
+                 child: const Text("Sign Up"),
                 ),
               ),
-              const Align(
-                alignment: AlignmentDirectional(-0.03, 0.91),
-                child: Text(
-                  'Already Have an Account? Sign In',
-                  style: TextStyle(
-                        fontFamily: 'Readex Pro',
-                        color: Colors.white,
-                      ),
+               InkWell(
+                onTap: () {
+                  print('InkWell tapped ...');     
+                },
+                child: const Align(
+                  alignment: AlignmentDirectional(-0.03, 0.91),
+                  child: Text(
+
+                    'Already Have an Account? Sign In',
+                    style: TextStyle(
+                          fontFamily: 'Readex Pro',
+                          color: Colors.white,
+                        ),
+                  ),
                 ),
               ),
             ],
