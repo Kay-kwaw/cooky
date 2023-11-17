@@ -212,7 +212,7 @@ class _ProductsWidgetState extends State<ProductsWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16, 8, 16, 0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
@@ -240,7 +240,7 @@ class _ProductsWidgetState extends State<ProductsWidget>
                                               borderRadius:
                                                   BorderRadius.circular(8),
                                               child: Image.network(
-                                                'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/7c5678f4-c28d-4862-a8d9-56750f839f12/zion-1-basketball-shoes-bJ0hLJ.png',
+                                                'https://i.pinimg.com/originals/10/63/35/106335f1d8ff6449d505643fd5c0ccd6.jpg',
                                                 width: 70,
                                                 height: 70,
                                                 fit: BoxFit.cover,
@@ -251,7 +251,7 @@ class _ProductsWidgetState extends State<ProductsWidget>
                                                   EdgeInsetsDirectional.fromSTEB(
                                                       16, 0, 0, 0),
                                               child: Text(
-                                                'Limited Edition',
+                                                'Fufu and Light Soup',
                                                 style:
                                                     TextStyle(
                                                           fontFamily:
@@ -271,7 +271,66 @@ class _ProductsWidgetState extends State<ProductsWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      16, 8, 16, 0),
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      // context.pushNamed('null');
+                                    },
+                                    child: Container(
+                                      width: double.infinity,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFFF1F4F8),
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            8, 8, 12, 8),
+                                        child: Row(
+                                          mainAxisSize: MainAxisSize.max,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(8),
+                                              child: Image.network(
+                                                'https://i.pinimg.com/originals/10/63/35/106335f1d8ff6449d505643fd5c0ccd6.jpg',
+                                                width: 70,
+                                                height: 70,
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                            const Padding(
+                                              padding:
+                                                  EdgeInsetsDirectional.fromSTEB(
+                                                      16, 0, 0, 0),
+                                              child: Text(
+                                                'Fufu and Light Soup',
+                                                style:
+                                                    TextStyle(
+                                                          fontFamily:
+                                                              'Plus Jakarta Sans',
+                                                          color:
+                                                              Color(0xFF14181B),
+                                                          fontSize: 16,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                        ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16, 12, 16, 0),
                                   child: Container(
                                     width: double.infinity,
@@ -291,7 +350,7 @@ class _ProductsWidgetState extends State<ProductsWidget>
                                             borderRadius:
                                                 BorderRadius.circular(8),
                                             child: Image.network(
-                                              'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/cd1fc4e4-5d02-4f18-afd7-a1ea42ff1f73/sportswear-club-fleece-pullover-hoodie-Gw4Nwq.png',
+                                              'https://images.unsplash.com/photo-1628521061262-19b5cdb7eee5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxOXx8cmljZXxlbnwwfHx8fDE3MDAxOTc2ODZ8MA&ixlib=rb-4.0.3&q=80&w=1080',
                                               width: 70,
                                               height: 70,
                                               fit: BoxFit.cover,
@@ -302,7 +361,7 @@ class _ProductsWidgetState extends State<ProductsWidget>
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     16, 0, 0, 0),
                                             child: Text(
-                                              'Outerwear',
+                                              'Rice and Stew',
                                               style: TextStyle(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',
@@ -338,7 +397,7 @@ class _ProductsWidgetState extends State<ProductsWidget>
                                             borderRadius:
                                                 BorderRadius.circular(8),
                                             child: Image.network(
-                                              'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/5de4d66e-c076-4bf7-80ca-a220e301cb3a/sportswear-club-fleece-joggers-KflRdQ.png',
+                                              'https://images.unsplash.com/photo-1596723420374-ba563535a1e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwyMHx8eWFtfGVufDB8fHx8MTcwMDIxMjYzMnww&ixlib=rb-4.0.3&q=80&w=1080',
                                               width: 70,
                                               height: 70,
                                               fit: BoxFit.cover,
@@ -349,7 +408,7 @@ class _ProductsWidgetState extends State<ProductsWidget>
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     16, 0, 0, 0),
                                             child: Text(
-                                              'Pants',
+                                              'Potatoes',
                                               style: TextStyle(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',
@@ -396,7 +455,7 @@ class _ProductsWidgetState extends State<ProductsWidget>
                                             borderRadius:
                                                 BorderRadius.circular(8),
                                             child: Image.network(
-                                              'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/64797ee7-26d7-4bd7-97c8-84d4edd8a48f/sportswear-mens-fleece-shorts-GPCN4W.png',
+                                              'https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxmdWZ1fGVufDB8fHx8MTcwMDE5NzU4NHww&ixlib=rb-4.0.3&q=80&w=1080',
                                               width: 70,
                                               height: 70,
                                               fit: BoxFit.cover,
@@ -407,7 +466,7 @@ class _ProductsWidgetState extends State<ProductsWidget>
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     16, 0, 0, 0),
                                             child: Text(
-                                              'Shorts Casual',
+                                              'Fufu and Egusi',
                                               style: TextStyle(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',
@@ -443,7 +502,7 @@ class _ProductsWidgetState extends State<ProductsWidget>
                                             borderRadius:
                                                 BorderRadius.circular(8),
                                             child: Image.network(
-                                              'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/55f6abe8-760c-427f-8cfa-b2df31bdd5b5/jordan-sport-dna-85-mens-t-shirt-ZLs0q3.png',
+                                              'https://www.sompaessentialsltd.com/images/dishes/Banku.jpg',
                                               width: 70,
                                               height: 70,
                                               fit: BoxFit.cover,
@@ -454,7 +513,7 @@ class _ProductsWidgetState extends State<ProductsWidget>
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     16, 0, 0, 0),
                                             child: Text(
-                                              'Casual Tees',
+                                              'Banku and Tilapia',
                                               style: TextStyle(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',
@@ -490,7 +549,7 @@ class _ProductsWidgetState extends State<ProductsWidget>
                                             borderRadius:
                                                 BorderRadius.circular(8),
                                             child: Image.network(
-                                              'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e67ed1da-48bf-4d03-9654-fa9c7b76ecce/blazer-mid-77-vintage-mens-shoes-nw30B2.png',
+                                              'https://ghanatalksbusiness.com/wp-content/uploads/2019/05/DSC02053.jpg',
                                               width: 70,
                                               height: 70,
                                               fit: BoxFit.cover,
@@ -501,7 +560,7 @@ class _ProductsWidgetState extends State<ProductsWidget>
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     16, 0, 0, 0),
                                             child: Text(
-                                              'Shoes',
+                                              'Okro stew',
                                               style: TextStyle(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',

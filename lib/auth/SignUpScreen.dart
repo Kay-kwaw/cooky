@@ -1,4 +1,5 @@
 
+import 'package:cookify/auth/loginscreen.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -26,7 +27,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Scaffold(
-        backgroundColor: Color.fromARGB(255, 143, 128, 128),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
         body: SafeArea(
           top: true,
           child: Stack(
@@ -37,7 +38,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   'Join us & Cook \nWith Confidence',
                   style: TextStyle(
                         fontFamily: 'Readex Pro',
-                        color: Color(0xFFEFEFEF),
+                        color: Color.fromARGB(255, 0, 0, 0),
                         fontSize: 40
                       ),
                 ),
@@ -50,7 +51,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     'Save delicious recipes and get personalized content.',
                     style:TextStyle(
                           fontFamily: 'Readex Pro',
-                          color: Color.fromARGB(255, 212, 212, 212),
+                          color: Color.fromARGB(255, 145, 143, 143),
                           fontSize: 18
                         ),
                   ),
@@ -60,7 +61,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 alignment: AlignmentDirectional(-0.02, -0.27),
                 child: Icon(
                   Icons.soup_kitchen_outlined,
-                  color:Colors.white,
+                  color:Color.fromARGB(255, 0, 0, 0),
                   size: 70,
                 ),
               ),
@@ -73,23 +74,68 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     obscureText: false,
                     decoration: InputDecoration(
                       labelText: 'fullname',
-                      labelStyle: TextStyle(),
+                      labelStyle: const TextStyle(),
                       hintStyle: TextStyle(),
-                      enabledBorder: OutlineInputBorder(
+                      enabledBorder: UnderlineInputBorder(
                         borderSide: const BorderSide(
                           color: Colors.white70,
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      focusedBorder: OutlineInputBorder(
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: const BorderSide(
+                          color: Color.fromARGB(179, 85, 84, 84),
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      errorBorder: UnderlineInputBorder(
+                        borderSide: const BorderSide(
+                          color:Colors.white,
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      focusedErrorBorder: UnderlineInputBorder(
+                        borderSide: const BorderSide(
+                          color: Colors.black,
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                    style:TextStyle(),
+                   
+                  ),
+                ),
+              ),
+              Align(
+                alignment: AlignmentDirectional(0.00, 0.23),
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(18, 0, 18, 0),
+                  child: TextFormField(
+                    // autofocus: true,
+                    // obscureText: false,
+                    decoration: InputDecoration(
+                      labelText: 'email',
+                      labelStyle: const TextStyle(),
+                      hintStyle: TextStyle(),
+                      enabledBorder: UnderlineInputBorder(
                         borderSide: const BorderSide(
                           color: Colors.white70,
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      errorBorder: OutlineInputBorder(
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: const BorderSide(
+                          color: Color.fromARGB(179, 85, 84, 84),
+                          width: 1,
+                        ),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      errorBorder: UnderlineInputBorder(
                         borderSide: const BorderSide(
                           color:Colors.white,
                           width: 1,
@@ -109,54 +155,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
               ),
+        
               Align(
-                alignment: AlignmentDirectional(0.00, 0.23),
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(18, 0, 18, 0),
-                  child: TextFormField(
-                    autofocus: true,
-                    obscureText: false,
-                    decoration: InputDecoration(
-                      labelText: 'email',
-                      labelStyle: TextStyle(),
-                      hintStyle: TextStyle(),
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          color: Colors.white70,
-                          width: 2,
-                        ),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          color: Colors.white70,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      errorBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          color: Colors.black,
-                          width: 2,
-                        ),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      focusedErrorBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          color: Colors.red,
-                          width: 2,
-                        ),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    ),
-                    style:TextStyle(),
-                    // validator:
-                    //     _model.textController3Validator.asValidator(context),
-                  ),
-                ),
-              ),
-              Align(
-                alignment: AlignmentDirectional(-0.02, 0.76),
+                alignment: const AlignmentDirectional(-0.02, 0.76),
                 child: OutlinedButton(
                   style: OutlinedButton.styleFrom(
                     primary: Colors.white,
@@ -166,7 +167,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                   ),
                   onPressed: () {
-                    print('Button pressed ...');
+                    Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => LoginWidget()));
                   },
                  child: const Text("Sign Up"),
                 ),
@@ -182,7 +185,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     'Already Have an Account? Sign In',
                     style: TextStyle(
                           fontFamily: 'Readex Pro',
-                          color: Colors.white,
+                          color: Color.fromARGB(255, 7, 7, 7),
                         ),
                   ),
                 ),
