@@ -1,5 +1,6 @@
 
 
+import 'package:cookify/auth/products/inventory.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -55,7 +56,7 @@ class _Product8WidgetState extends State<Product8Widget>
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(0),
                               child: Image.network(
-                                'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/7c5678f4-c28d-4862-a8d9-56750f839f12/zion-1-basketball-shoes-bJ0hLJ.png',
+                                'https://images.unsplash.com/photo-1516684732162-798a0062be99?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxfHxyaWNlfGVufDB8fHx8MTcwMDE5NzY4Nnww&ixlib=rb-4.0.3&q=80&w=1080',
                                 width: double.infinity,
                                 height: double.infinity,
                                 fit: BoxFit.cover,
@@ -90,7 +91,11 @@ class _Product8WidgetState extends State<Product8Widget>
                                           size: 24,
                                         ),
                                         onPressed: () async {
-                                          // Navigator.pop();
+                                         
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ProductsWidget()),
+            );
                                         },
                                       ),
                                     ),
@@ -120,14 +125,14 @@ class _Product8WidgetState extends State<Product8Widget>
                       ],
                     ),
                   ),
-                  const Padding(
+                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(24, 20, 24, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          'Zion Limited',
+                        const Text(
+                          'Vegetable Rice',
                           style: TextStyle(
                                 fontFamily: 'Outfit',
                                 color: Color(0xFF14181B),
@@ -135,15 +140,19 @@ class _Product8WidgetState extends State<Product8Widget>
                                 fontWeight: FontWeight.normal,
                               ),
                         ),
-                        Text(
-                          '\$156.00',
+                         const Text(
+                          '45 Mins',
                           style: TextStyle(
                                 fontFamily: 'Outfit',
                                 color: Color(0xFF4B39EF),
-                                fontSize: 24,
+                                fontSize: 14,
                                 fontWeight: FontWeight.normal,
                               ),
                         ),
+                        IconButton(onPressed: (){
+
+                        }, icon: Icon(Icons.watch)),
+                       
                       ],
                     ),
                   ),
@@ -153,7 +162,7 @@ class _Product8WidgetState extends State<Product8Widget>
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Text(
-                          'Retailed by Nike',
+                          'Retailed by Chef',
                           style:
                               TextStyle(
                                     fontFamily: 'Plus Jakarta Sans',
@@ -202,12 +211,12 @@ class _Product8WidgetState extends State<Product8Widget>
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Text(
-                          'DESCRIPTION',
+                          'INSTRUCTIONS',
                           style:
                               TextStyle(
                                     fontFamily: 'Plus Jakarta Sans',
                                     color: Color(0xFF14181B),
-                                    fontSize: 12,
+                                    fontSize: 15,
                                     fontWeight: FontWeight.bold,
                                   ),
                         ),
@@ -252,44 +261,7 @@ class _Product8WidgetState extends State<Product8Widget>
                       ],
                     ),
                   ),
-                  const Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            'With a down-to-earth persona and abilities that are out of this world, Zion is unlike anybody else. On court, the gentle spirit who\'s all about family transforms into an unmatched force of unstoppable athleticism and speed.',
-                            style: TextStyle(
-                                  fontFamily: 'Plus Jakarta Sans',
-                                  color: Color(0xFF57636C),
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            'With a down-to-earth persona and abilities that are out of this world, Zion is unlike anybody else. On court, the gentle spirit who\'s all about family transforms into an unmatched force of unstoppable athleticism and speed.',
-                            style: TextStyle(
-                                  fontFamily: 'Plus Jakarta Sans',
-                                  color: Color(0xFF57636C),
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
+                
                   const Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(24, 16, 24, 0),
                     child: Row(
@@ -301,9 +273,85 @@ class _Product8WidgetState extends State<Product8Widget>
                               TextStyle(
                                     fontFamily: 'Plus Jakarta Sans',
                                     color: Color(0xFF14181B),
-                                    fontSize: 12,
+                                    fontSize: 15,
                                     fontWeight: FontWeight.bold,
                                   ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          child: Text(
+                            'With a down-to-earth persona and abilities that are out of this world, Zion is unlike anybody else. On court, the gentle spirit who\'s all about family transforms into an unmatched force of unstoppable athleticism and speed.',
+                            style: TextStyle(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  color: Color(0xFF57636C),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          child: Text(
+                            'With a down-to-earth persona and abilities that are out of this world, Zion is unlike anybody else. On court, the gentle spirit who\'s all about family transforms into an unmatched force of unstoppable athleticism and speed.',
+                            style: TextStyle(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  color: Color(0xFF57636C),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          child: Text(
+                            'With a down-to-earth persona and abilities that are out of this world, Zion is unlike anybody else. On court, the gentle spirit who\'s all about family transforms into an unmatched force of unstoppable athleticism and speed.',
+                            style: TextStyle(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  color: Color(0xFF57636C),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          child: Text(
+                            'With a down-to-earth persona and abilities that are out of this world, Zion is unlike anybody else. On court, the gentle spirit who\'s all about family transforms into an unmatched force of unstoppable athleticism and speed.',
+                            style: TextStyle(
+                                  fontFamily: 'Plus Jakarta Sans',
+                                  color: Color(0xFF57636C),
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                          ),
                         ),
                       ],
                     ),
