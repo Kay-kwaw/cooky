@@ -49,7 +49,7 @@ class _ProductsWidgetState extends State<ProductsWidget>
               },
             ),
             title: const Text(
-              'Categories',
+              'Recipes',
               style: TextStyle(
                     fontFamily: 'Outfit',
                     color: Color(0xFF14181B),
@@ -70,69 +70,72 @@ class _ProductsWidgetState extends State<ProductsWidget>
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsetsDirectional.fromSTEB(16, 12, 8, 0),
-                      child: TextFormField(
-                        textCapitalization: TextCapitalization.words,
-                        obscureText: false,
-                        decoration: InputDecoration(
-                          labelText: 'Search for your shoes...',
-                          labelStyle:
-                              const TextStyle(
-                                    fontFamily: 'Plus Jakarta Sans',
-                                    color: Color(0xFF57636C),
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                          hintStyle:
-                              const TextStyle(
-                                    fontFamily: 'Plus Jakarta Sans',
-                                    color: Color(0xFF57636C),
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                              color: Color(0xFFE0E3E7),
-                              width: 2,
+                      child: Container(
+                        height: 50,
+                        child: TextFormField(
+                          // textCapitalization: TextCapitalization.words,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            labelText: 'Search for your recipe...',
+                            labelStyle:
+                                const TextStyle(
+                                      fontFamily: 'Plus Jakarta Sans',
+                                      color: Color(0xFF57636C),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                            hintStyle:
+                                const TextStyle(
+                                      fontFamily: 'Plus Jakarta Sans',
+                                      color: Color(0xFF57636C),
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                color: Color(0xFFE0E3E7),
+                                width: 1,
+                              ),
+                              borderRadius: BorderRadius.circular(12),
                             ),
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                              color: Color(0xFF4B39EF),
-                              width: 2,
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                color: Color.fromARGB(255, 0, 0, 0),
+                                width: 1,
+                              ),
+                              borderRadius: BorderRadius.circular(12),
                             ),
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          errorBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                              color: Color(0xFFFF5963),
-                              width: 2,
+                            errorBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                color: Color(0xFFFF5963),
+                                width: 2,
+                              ),
+                              borderRadius: BorderRadius.circular(12),
                             ),
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          focusedErrorBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                              color: Color(0xFFFF5963),
-                              width: 2,
+                            focusedErrorBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                color: Color(0xFFFF5963),
+                                width: 2,
+                              ),
+                              borderRadius: BorderRadius.circular(12),
                             ),
-                            borderRadius: BorderRadius.circular(12),
+                            filled: true,
+                            fillColor: Color(0xFFF1F4F8),
+                            contentPadding:
+                                const EdgeInsetsDirectional.fromSTEB(24, 24, 20, 24),
+                            prefixIcon: const Icon(
+                              Icons.search,
+                              color: Color(0xFF57636C),
+                              size: 16,
+                            ),
                           ),
-                          filled: true,
-                          fillColor: Color(0xFFF1F4F8),
-                          contentPadding:
-                              EdgeInsetsDirectional.fromSTEB(24, 24, 20, 24),
-                          prefixIcon: Icon(
-                            Icons.search,
-                            color: Color(0xFF57636C),
-                            size: 16,
-                          ),
+                          style: const TextStyle(
+                                fontFamily: 'Plus Jakarta Sans',
+                                color: Color(0xFF14181B),
+                                fontSize: 12,
+                                fontWeight: FontWeight.normal,
+                              ),
                         ),
-                        style: const TextStyle(
-                              fontFamily: 'Plus Jakarta Sans',
-                              color: Color(0xFF14181B),
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal,
-                            ),
                       ),
                     ),
                   ),
@@ -154,7 +157,7 @@ class _ProductsWidgetState extends State<ProductsWidget>
               Expanded(
                 child: Column(
                   children: [
-                    Align(
+                    const Align(
                       alignment: Alignment(-1, 0),
                       child: TabBar(
                         isScrollable: true,
@@ -162,24 +165,27 @@ class _ProductsWidgetState extends State<ProductsWidget>
                             TextStyle(
                                   fontFamily: 'Plus Jakarta Sans',
                                   color: Colors.white,
-                                  fontSize: 18,
+                                  fontSize: 16,
                                   fontWeight: FontWeight.normal,
                                 ),
                         unselectedLabelStyle: TextStyle(),
-                        labelColor: Color(0xFF4B39EF),
+                        labelColor: Color.fromARGB(255, 13, 13, 13),
                         unselectedLabelColor: Color(0xFF57636C),
                         labelPadding:
                             EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
                         padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
                         tabs: [
                           Tab(
-                            text: 'Men',
-                          ),
-                          const Tab(
-                            text: 'Women',
+                            text: 'Local',
                           ),
                           Tab(
-                            text: 'Kids',
+                            text: 'Continental',
+                          ),
+                          Tab(
+                            text: 'For Kids',
+                          ),
+                          Tab(
+                            text: 'Health',
                           ),
                         ],
                       ),
@@ -223,7 +229,7 @@ class _ProductsWidgetState extends State<ProductsWidget>
                                         borderRadius: BorderRadius.circular(12),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             8, 8, 12, 8),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
