@@ -10,6 +10,7 @@ class PhoneAuthWidget extends StatefulWidget {
 }
 
 class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
+  final controller = PageController(viewportFraction: 0.8, keepPage: true);
  
   @override
   void initState() {
@@ -95,16 +96,38 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(16),
                           ),
-                          child: PageView.builder(
-                            controller: PageController(viewportFraction: 0.8),
-                            itemCount: pages.length,
-                            itemBuilder: (_, index) {
-                              return Padding(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 10, vertical: 4),
-                                child: pages[index],
-                              );
-                            },
+                          child: PageView(
+                            controller: controller,
+                                    scrollDirection: Axis.horizontal,
+                                    children: [
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.circular(8),
+                                        child: Image.network(
+                                         "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwzfHxmb29kfGVufDB8fHx8MTcwMDY5MzI4OHww&ixlib=rb-4.0.3&q=80&w=1080",
+                                          width: 300,
+                                          height: 191.25,
+                                          fit: BoxFit.scaleDown,
+                                        ),
+                                      ),
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.circular(8),
+                                        child: Image.network(
+                                          'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwzfHxmb29kfGVufDB8fHx8MTcwMDY5MzI4OHww&ixlib=rb-4.0.3&q=80&w=1080',
+                                          width: 300,
+                                          height: 200,
+                                          fit: BoxFit.contain,
+                                        ),
+                                      ),
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.circular(8),
+                                        child: Image.network(
+                                          'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwzfHxmb29kfGVufDB8fHx8MTcwMDY5MzI4OHww&ixlib=rb-4.0.3&q=80&w=1080',
+                                          width: 300,
+                                          height: 200,
+                                          fit: BoxFit.contain,
+                                        ),
+                                      ),
+                                    ],
                           ),
                         ),
                       ),
