@@ -1,14 +1,6 @@
-import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
-import 'phone_auth_model.dart';
-export 'phone_auth_model.dart';
+
+import 'package:flutter/material.dart';
 
 class PhoneAuthWidget extends StatefulWidget {
   const PhoneAuthWidget({Key? key}) : super(key: key);
@@ -18,37 +10,21 @@ class PhoneAuthWidget extends StatefulWidget {
 }
 
 class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
-  late PhoneAuthModel _model;
-
-  final scaffoldKey = GlobalKey<ScaffoldState>();
-
+ 
   @override
   void initState() {
-    super.initState();
-    _model = createModel(context, () => PhoneAuthModel());
-
-    _model.phoneNumberController ??= TextEditingController();
-    _model.phoneNumberFocusNode ??= FocusNode();
+   
   }
 
   @override
   void dispose() {
-    _model.dispose();
+   
 
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
