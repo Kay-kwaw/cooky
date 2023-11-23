@@ -94,7 +94,7 @@ class _Product8WidgetState extends State<Product8Widget>
                                          
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ProductsWidget()),
+              MaterialPageRoute(builder: (context) => const ProductsWidget()),
             );
                                         },
                                       ),

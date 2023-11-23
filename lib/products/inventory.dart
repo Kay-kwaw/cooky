@@ -1,5 +1,6 @@
 
 
+import 'package:cookify/auth/products/inventorydetails.dart';
 import 'package:flutter/material.dart';
 
 class ProductsWidget extends StatefulWidget {
@@ -38,16 +39,7 @@ class _ProductsWidgetState extends State<ProductsWidget>
           appBar: AppBar(
             backgroundColor: Colors.white,
             automaticallyImplyLeading: false,
-            leading: IconButton(
-              icon: const Icon(
-                Icons.arrow_back_rounded,
-                color: Color(0xFF14181B),
-                size: 30,
-              ),
-              onPressed: () async {
-                Navigator.pop(context);
-              },
-            ),
+            
             title: const Text(
               'Recipes',
               style: TextStyle(
@@ -195,7 +187,7 @@ class _ProductsWidgetState extends State<ProductsWidget>
                               mainAxisSize: MainAxisSize.max,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                const Padding(
+                                 const Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       16, 16, 0, 0),
                                   child: Text(
@@ -243,7 +235,7 @@ class _ProductsWidgetState extends State<ProductsWidget>
                                                 fit: BoxFit.cover,
                                               ),
                                             ),
-                                            const Padding(
+                                             Padding(
                                               padding:
                                                   EdgeInsetsDirectional.fromSTEB(
                                                       16, 0, 0, 0),
@@ -294,19 +286,27 @@ class _ProductsWidgetState extends State<ProductsWidget>
                                               fit: BoxFit.cover,
                                             ),
                                           ),
-                                          const Padding(
+                                           Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16, 0, 0, 0),
-                                            child: Text(
-                                              'Rice and Stew',
-                                              style: TextStyle(
-                                                    fontFamily:
-                                                        'Plus Jakarta Sans',
-                                                    color: Color(0xFF14181B),
-                                                    fontSize: 16,
-                                                    fontWeight: FontWeight.normal,
-                                                  ),
+                                            child: InkWell(
+                                              onTap: (){
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Product8Widget()),
+            );
+                                              },
+                                              child: const Text(
+                                                'Rice and Stew',
+                                                style: TextStyle(
+                                                      fontFamily:
+                                                          'Plus Jakarta Sans',
+                                                      color: Color(0xFF14181B),
+                                                      fontSize: 16,
+                                                      fontWeight: FontWeight.normal,
+                                                    ),
+                                              ),
                                             ),
                                           ),
                                         ],
