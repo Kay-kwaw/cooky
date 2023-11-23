@@ -26,11 +26,7 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => _model.unfocusNode.canRequestFocus
-          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
-          : FocusScope.of(context).unfocus(),
       child: Scaffold(
-        key: scaffoldKey,
         backgroundColor: Color(0xFFF1F4F8),
         body: Container(
           width: double.infinity,
@@ -113,11 +109,7 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                               Padding(
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(0, 0, 16, 0),
-                                child: FlutterFlowIconButton(
-                                  borderColor: Color(0xFFF1F4F8),
-                                  borderRadius: 30,
-                                  borderWidth: 2,
-                                  buttonSize: 46,
+                                child: IconButton(
                                   icon: Icon(
                                     Icons.arrow_back_rounded,
                                     color: Color(0xFF57636C),
