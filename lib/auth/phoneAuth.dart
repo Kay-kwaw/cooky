@@ -120,12 +120,10 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                                   },
                                 ),
                               ),
-                              Expanded(
+                              const Expanded(
                                 child: Text(
                                   'Phone Sign In',
-                                  style: FlutterFlowTheme.of(context)
-                                      .headlineMedium
-                                      .override(
+                                  style: TextStyle(
                                         fontFamily: 'Outfit',
                                         color: Color(0xFF0F1113),
                                         fontSize: 24,
@@ -145,51 +143,45 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                             children: [
                               Expanded(
                                 child: TextFormField(
-                                  controller: _model.phoneNumberController,
-                                  focusNode: _model.phoneNumberFocusNode,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     labelText: 'Your Phone Number...',
-                                    labelStyle: FlutterFlowTheme.of(context)
-                                        .titleSmall
-                                        .override(
+                                    labelStyle:const TextStyle(
                                           fontFamily: 'Outfit',
                                           color: Color(0xFF57636C),
                                           fontSize: 16,
                                           fontWeight: FontWeight.normal,
                                         ),
-                                    hintText: '+1 (204) 204-2056',
-                                    hintStyle: FlutterFlowTheme.of(context)
-                                        .bodySmall
-                                        .override(
+                                    hintText: '+233 (04) 204-2056',
+                                    hintStyle: const TextStyle(
                                           fontFamily: 'Outfit',
                                           color: Color(0xFF57636C),
                                           fontSize: 14,
                                           fontWeight: FontWeight.normal,
                                         ),
                                     enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Color(0xFFF1F4F8),
                                         width: 2,
                                       ),
                                       borderRadius: BorderRadius.circular(8),
                                     ),
                                     focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Color(0x00000000),
                                         width: 2,
                                       ),
                                       borderRadius: BorderRadius.circular(8),
                                     ),
                                     errorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Color(0x00000000),
                                         width: 2,
                                       ),
                                       borderRadius: BorderRadius.circular(8),
                                     ),
                                     focusedErrorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Color(0x00000000),
                                         width: 2,
                                       ),
@@ -198,21 +190,17 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                                     filled: true,
                                     fillColor: Colors.white,
                                     contentPadding:
-                                        EdgeInsetsDirectional.fromSTEB(
+                                        const EdgeInsetsDirectional.fromSTEB(
                                             16, 24, 0, 24),
                                   ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleMedium
-                                      .override(
+                                  style: const TextStyle(
                                         fontFamily: 'Outfit',
                                         color: Color(0xFF0F1113),
                                         fontSize: 18,
                                         fontWeight: FontWeight.w500,
                                       ),
                                   maxLines: null,
-                                  validator: _model
-                                      .phoneNumberControllerValidator
-                                      .asValidator(context),
+                                  
                                 ),
                               ),
                             ],
@@ -225,54 +213,20 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              FFButtonWidget(
+                              OutlinedButton(
                                 onPressed: () async {
-                                  final phoneNumberVal =
-                                      _model.phoneNumberController.text;
-                                  if (phoneNumberVal == null ||
-                                      phoneNumberVal.isEmpty ||
-                                      !phoneNumberVal.startsWith('+')) {
-                                    ScaffoldMessenger.of(context).showSnackBar(
-                                      SnackBar(
-                                        content: Text(
-                                            'Phone Number is required and has to start with +.'),
-                                      ),
-                                    );
-                                    return;
-                                  }
-                                  await authManager.beginPhoneAuth(
-                                    context: context,
-                                    phoneNumber: phoneNumberVal,
-                                    onCodeSent: (context) async {
-                                      context.goNamedAuth(
-                                        'null',
-                                        context.mounted,
-                                        ignoreRedirect: true,
-                                      );
-                                    },
-                                  );
+                                 
                                 },
-                                text: 'Sign In',
-                                options: FFButtonOptions(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 0, 0),
-                                  color: Color(0xFF4B39EF),
-                                  textStyle: FlutterFlowTheme.of(context)
-                                      .titleSmall
-                                      .override(
-                                        fontFamily: 'Outfit',
-                                        color: Colors.white,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.normal,
-                                      ),
-                                  elevation: 2,
-                                  borderSide: BorderSide(
-                                    color: Colors.transparent,
-                                    width: 1,
+                                style: OutlinedButton.styleFrom(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  side: const BorderSide(
+                                    color: Color(0xFF57636C),
+                                    width: 2,
                                   ),
                                 ),
+                                child: Text("Sign In"),
                               ),
                             ],
                           ),
