@@ -1,6 +1,6 @@
 
 
-import 'package:cookify/auth/products/inventorydetails.dart';
+import 'package:cookify/products/inventorydetails.dart';
 import 'package:flutter/material.dart';
 
 class ProductsWidget extends StatefulWidget {

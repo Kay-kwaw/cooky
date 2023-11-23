@@ -25,6 +25,24 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
 
   @override
   Widget build(BuildContext context) {
+        final pages = List.generate(
+        3,
+        (index) => Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                color: Colors.grey.shade300,
+              ),
+              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+              child: Container(
+                height: 280,
+                child: Center(
+                    child: Text(
+                  "Page $index",
+                  style: TextStyle(color: Colors.green),
+                )),
+              ),
+            )
+            );
     return GestureDetector(
       child: Scaffold(
         backgroundColor: Color(0xFFF1F4F8),
@@ -42,46 +60,103 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 70, 0, 0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        if (Theme.of(context).brightness == Brightness.dark)
-                          Image.asset(
-                            'assets/images/uiLogo_robinLight@3x.png',
-                            width: 240,
-                            height: 60,
-                            fit: BoxFit.fitWidth,
-                          ),
-                        if (!(Theme.of(context).brightness == Brightness.dark))
-                          Image.asset(
-                            'assets/images/uiLogo_robinDark@3x.png',
-                            width: 240,
-                            height: 60,
-                            fit: BoxFit.fitWidth,
-                          ),
-                      ],
-                    ),
-                  ),
+                  // Padding(
+                  //   padding: EdgeInsetsDirectional.fromSTEB(0, 70, 0, 0),
+                  //   child: Row(
+                  //     mainAxisSize: MainAxisSize.max,
+                  //     mainAxisAlignment: MainAxisAlignment.center,
+                  //     children: [
+                  //       if (Theme.of(context).brightness == Brightness.dark)
+                  //         Image.asset(
+                  //           'assets/images/uiLogo_robinLight@3x.png',
+                  //           width: 240,
+                  //           height: 60,
+                  //           fit: BoxFit.fitWidth,
+                  //         ),
+                  //       if (!(Theme.of(context).brightness == Brightness.dark))
+                  //         Image.asset(
+                  //           'assets/images/uiLogo_robinDark@3x.png',
+                  //           width: 240,
+                  //           height: 60,
+                  //           fit: BoxFit.fitWidth,
+                  //         ),
+                  //     ],
+                  //   ),
+                  // ),
                   Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 192),
-                        child: Image.asset(
-                          'assets/images/illi_2@2x.png',
-                          width: 300,
-                          height: 270,
-                          fit: BoxFit.cover,
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                        child: Container(
+                          width: double.infinity,
+                          height: 300,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: PageView.builder(
+                            controller: PageController(viewportFraction: 0.8),
+                            itemCount: pages.length,
+                            itemBuilder: (_, index) {
+                              return Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 4),
+                                child: pages[index],
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                        child: Container(
+                          width: double.infinity,
+                          height: 300,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: PageView.builder(
+                            controller: PageController(viewportFraction: 0.8),
+                            itemCount: pages.length,
+                            itemBuilder: (_, index) {
+                              return Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 4),
+                                child: pages[index],
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                        child: Container(
+                          width: double.infinity,
+                          height: 300,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: PageView.builder(
+                            controller: PageController(viewportFraction: 0.8),
+                            itemCount: pages.length,
+                            itemBuilder: (_, index) {
+                              return Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 10, vertical: 4),
+                                child: pages[index],
+                              );
+                            },
+                          ),
                         ),
                       ),
                     ],
                   ),
                   Container(
                     width: double.infinity,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.white,
                       boxShadow: [
                         BoxShadow(

@@ -1,5 +1,5 @@
 
-import 'package:cookify/auth/products/inventory.dart';
+import 'package:cookify/products/inventory.dart';
 import 'package:flutter/material.dart';
 
 class LoginWidget extends StatefulWidget {
