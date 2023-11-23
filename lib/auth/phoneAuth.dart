@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class PhoneAuthWidget extends StatefulWidget {
   const PhoneAuthWidget({Key? key}) : super(key: key);
@@ -46,12 +47,12 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
             );
     return GestureDetector(
       child: Scaffold(
-        backgroundColor: Color(0xFFF1F4F8),
+        backgroundColor: Color.fromARGB(255, 250, 250, 250),
         body: Container(
           width: double.infinity,
           height: MediaQuery.sizeOf(context).height * 1,
-          decoration: BoxDecoration(
-            color: Color(0xFFF1F4F8),
+          decoration: const BoxDecoration(
+            color: Color.fromARGB(255, 255, 255, 255),
           ),
           child: Align(
             alignment: AlignmentDirectional(0.00, 1.00),
@@ -61,52 +62,53 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  // Padding(
-                  //   padding: EdgeInsetsDirectional.fromSTEB(0, 70, 0, 0),
-                  //   child: Row(
-                  //     mainAxisSize: MainAxisSize.max,
-                  //     mainAxisAlignment: MainAxisAlignment.center,
-                  //     children: [
-                  //       if (Theme.of(context).brightness == Brightness.dark)
-                  //         Image.asset(
-                  //           'assets/images/uiLogo_robinLight@3x.png',
-                  //           width: 240,
-                  //           height: 60,
-                  //           fit: BoxFit.fitWidth,
-                  //         ),
-                  //       if (!(Theme.of(context).brightness == Brightness.dark))
-                  //         Image.asset(
-                  //           'assets/images/uiLogo_robinDark@3x.png',
-                  //           width: 240,
-                  //           height: 60,
-                  //           fit: BoxFit.fitWidth,
-                  //         ),
-                  //     ],
-                  //   ),
-                  // ),
+                   Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 70, 0, 40
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text("Cookify", style: TextStyle(
+                          fontSize: 30,
+                        ),),
+                        IconButton(onPressed: () {
+
+                        },
+                         icon: const Icon(Icons.food_bank_outlined),
+                         iconSize: 30,
+                         )
+                        
+                      
+                      ],
+                    ),
+                  ),
                   Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                        padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                         child: Container(
                           width: double.infinity,
-                          height: 300,
+                          height: 400,
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: const Color.fromARGB(255, 255, 255, 255),
                             borderRadius: BorderRadius.circular(16),
                           ),
                           child: PageView(
                             controller: controller,
                                     scrollDirection: Axis.horizontal,
                                     children: [
-                                      ClipRRect(
-                                        borderRadius: BorderRadius.circular(8),
-                                        child: Image.network(
-                                         "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwzfHxmb29kfGVufDB8fHx8MTcwMDY5MzI4OHww&ixlib=rb-4.0.3&q=80&w=1080",
-                                          width: 300,
-                                          height: 191.25,
-                                          fit: BoxFit.scaleDown,
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.circular(8),
+                                          child: Image.network(
+                                           "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwzfHxmb29kfGVufDB8fHx8MTcwMDY5MzI4OHww&ixlib=rb-4.0.3&q=80&w=1080",
+                                            width: 300,
+                                            height: 191.25,
+                                            fit: BoxFit.scaleDown,
+                                          ),
                                         ),
                                       ),
                                       ClipRRect(
@@ -118,19 +120,42 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                                           fit: BoxFit.contain,
                                         ),
                                       ),
-                                      ClipRRect(
-                                        borderRadius: BorderRadius.circular(8),
-                                        child: Image.network(
-                                          'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwzfHxmb29kfGVufDB8fHx8MTcwMDY5MzI4OHww&ixlib=rb-4.0.3&q=80&w=1080',
-                                          width: 300,
-                                          height: 200,
-                                          fit: BoxFit.contain,
+                                      Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.circular(8),
+                                          child: Image.network(
+                                            "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwzfHxmb29kfGVufDB8fHx8MTcwMDY5MzI4OHww&ixlib=rb-4.0.3&q=80&w=1080",
+                                            width: 300,
+                                            height: 200,
+                                            fit: BoxFit.contain,
+                                          ),
                                         ),
                                       ),
                                     ],
                           ),
                         ),
                       ),
+                      SmoothPageIndicator(  
+                                      count: 3,
+                                      axisDirection: Axis.horizontal,
+                                      onDotClicked: (i) async {
+                                        await controller.animateToPage(
+                                          i,
+                                          duration: const Duration(milliseconds: 500),
+                                          curve: Curves.ease,
+                                        );
+                                      },
+                                      effect: WormEffect(
+                                        spacing: 8,
+                                        radius: 16,
+                                        dotWidth: 16,
+                                        dotHeight: 8,
+                                        dotColor: Colors.grey.shade400,   
+                                        activeDotColor: Color.fromARGB(255, 0, 0, 0),
+                                        paintStyle: PaintingStyle.fill,
+                                      ), controller: controller,
+                                    ),
                       
                     ],
                   ),
@@ -165,10 +190,10 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                               children: [
                                 Padding(
                                   padding:
-                                      EdgeInsetsDirectional.fromSTEB(0, 0, 16, 0),
+                                      EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                   child: IconButton(
-                                    icon: Icon(
-                                      Icons.arrow_back_rounded,
+                                    icon: const Icon(
+                                      Icons.food_bank,
                                       color: Color(0xFF57636C),
                                       size: 24,
                                     ),
@@ -179,7 +204,7 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                                 ),
                                 const Expanded(
                                   child: Text(
-                                    'Phone Sign In',
+                                    'Chef In',
                                     style: TextStyle(
                                           fontFamily: 'Outfit',
                                           color: Color(0xFF0F1113),
@@ -283,7 +308,10 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                                       width: 2,
                                     ),
                                   ),
-                                  child: Text("Sign In"),
+                                  child: const Text("Sign In", 
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                  ),),
                                 ),
                               ],
                             ),

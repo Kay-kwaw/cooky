@@ -36,6 +36,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_rating_bar: ^4.0.0
+  smooth_page_indicator: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -60,8 +61,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-# assets:
-#   - assets/page1.png
+  assets:
+   - assets/images/Cookify.png
 #   - assets/page2.png
 #   - assets/page3.png
 #   - assets/page4.png
