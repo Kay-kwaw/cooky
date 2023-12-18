@@ -1,7 +1,4 @@
-import 'package:cookify/auth/SignUpScreen.dart';
-import 'package:cookify/auth/loginscreen.dart';
 import 'package:cookify/auth/phoneAuth.dart';
-import 'package:cookify/products/inventory.dart';
 import 'package:flutter/material.dart';
 
 void main() {

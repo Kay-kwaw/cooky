@@ -1,5 +1,7 @@
 
 
+import 'package:cookify/products/inventory.dart';
+import 'package:cookify/products/inventorydetails.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -290,14 +292,17 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                           ),
                           Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(20, 12, 20, 32),
+                                EdgeInsetsDirectional.fromSTEB(20, 5, 20, 32),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 OutlinedButton(
                                   onPressed: () async {
-                                   
+                                   Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ProductsWidget()),
+            );
                                   },
                                   style: OutlinedButton.styleFrom(
                                     shape: RoundedRectangleBorder(
