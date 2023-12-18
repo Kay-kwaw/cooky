@@ -61,11 +61,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-#   assets:
-#   #  - assets/images/Cookify.png
-# #   - assets/page2.png
-# #   - assets/page3.png
-# #   - assets/page4.png
+  assets:
+    - assets/chef.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

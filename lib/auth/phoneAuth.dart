@@ -64,25 +64,8 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                   Padding(
+                   const Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 70, 0, 40
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text("Cookify", style: TextStyle(
-                          fontSize: 30,
-                        ),),
-                        IconButton(onPressed: () {
-
-                        },
-                         icon: const Icon(Icons.food_bank_outlined),
-                         iconSize: 30,
-                         )
-                        
-                      
-                      ],
                     ),
                   ),
                   Column(
@@ -97,68 +80,14 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                             color: const Color.fromARGB(255, 255, 255, 255),
                             borderRadius: BorderRadius.circular(16),
                           ),
-                          child: PageView(
-                            controller: controller,
-                                    scrollDirection: Axis.horizontal,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(8),
-                                          child: Image.network(
-                                           "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwzfHxmb29kfGVufDB8fHx8MTcwMDY5MzI4OHww&ixlib=rb-4.0.3&q=80&w=1080",
-                                            width: 300,
-                                            height: 191.25,
-                                            fit: BoxFit.scaleDown,
-                                          ),
-                                        ),
-                                      ),
-                                      ClipRRect(
-                                        borderRadius: BorderRadius.circular(8),
-                                        child: Image.network(
-                                          'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwzfHxmb29kfGVufDB8fHx8MTcwMDY5MzI4OHww&ixlib=rb-4.0.3&q=80&w=1080',
-                                          width: 300,
-                                          height: 200,
-                                          fit: BoxFit.contain,
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(8),
-                                          child: Image.network(
-                                            "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwzfHxmb29kfGVufDB8fHx8MTcwMDY5MzI4OHww&ixlib=rb-4.0.3&q=80&w=1080",
-                                            width: 300,
-                                            height: 200,
-                                            fit: BoxFit.contain,
-                                          ),
-                                        ),
-                                      ),
-                                    ],
+                          child: Image.asset(
+                            'assets/chef.png',
+                            height: 400,
+                            width: double.infinity,
+                            // fit: BoxFit.cover,
                           ),
                         ),
                       ),
-                      SmoothPageIndicator(  
-                                      count: 3,
-                                      axisDirection: Axis.horizontal,
-                                      onDotClicked: (i) async {
-                                        await controller.animateToPage(
-                                          i,
-                                          duration: const Duration(milliseconds: 500),
-                                          curve: Curves.ease,
-                                        );
-                                      },
-                                      effect: WormEffect(
-                                        spacing: 8,
-                                        radius: 16,
-                                        dotWidth: 16,
-                                        dotHeight: 8,
-                                        dotColor: Colors.grey.shade400,   
-                                        activeDotColor: Color.fromARGB(255, 0, 0, 0),
-                                        paintStyle: PaintingStyle.fill,
-                                      ), controller: controller,
-                                    ),
-                      
                     ],
                   ),
                   Padding(
