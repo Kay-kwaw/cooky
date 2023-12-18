@@ -38,7 +38,7 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
               ),
               margin: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
               child: Container(
-                height: 280,
+                height: 250,
                 child: Center(
                     child: Text(
                   "Page $index",
