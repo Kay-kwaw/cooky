@@ -2,6 +2,7 @@
 
 import 'package:cookify/products/inventory.dart';
 import 'package:cookify/products/inventorydetails.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -36,20 +37,20 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                 borderRadius: BorderRadius.circular(16),
                 color: Colors.grey.shade300,
               ),
-              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+              margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
               child: Container(
                 height: 250,
                 child: Center(
                     child: Text(
                   "Page $index",
-                  style: TextStyle(color: Colors.green),
+                  style: const TextStyle(color: Colors.green),
                 )),
               ),
             )
             );
     return GestureDetector(
       child: Scaffold(
-        backgroundColor: Color.fromARGB(255, 250, 250, 250),
+        backgroundColor: const Color.fromARGB(255, 250, 250, 250),
         body: Container(
           width: double.infinity,
           height: MediaQuery.sizeOf(context).height * 1,
@@ -57,7 +58,7 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
             color: Color.fromARGB(255, 255, 255, 255),
           ),
           child: Align(
-            alignment: AlignmentDirectional(0.00, 1.00),
+            alignment: const AlignmentDirectional(0.00, 1.00),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -91,7 +92,7 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                     ],
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
                     child: Container(
                       width: double.infinity,
                       decoration: const BoxDecoration(
@@ -115,13 +116,13 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                         children: [
                           Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(20, 16, 20, 0),
+                                const EdgeInsetsDirectional.fromSTEB(20, 16, 20, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
                                   padding:
-                                      EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                                      const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                                   child: IconButton(
                                     icon: const Icon(
                                       Icons.food_bank,
@@ -129,7 +130,9 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                                       size: 24,
                                     ),
                                     onPressed: () {
-                                      print('IconButton pressed ...');
+                                      if (kDebugMode) {
+                                        print('IconButton pressed ...');
+                                      }
                                     },
                                   ),
                                 ),
@@ -149,7 +152,7 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                           ),
                           Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(20, 16, 20, 0),
+                                const EdgeInsetsDirectional.fromSTEB(20, 16, 20, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -221,7 +224,7 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                           ),
                           Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(20, 5, 20, 32),
+                                const EdgeInsetsDirectional.fromSTEB(20, 5, 20, 32),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.end,
@@ -230,7 +233,7 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                                   onPressed: () async {
                                    Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ProductsWidget()),
+              MaterialPageRoute(builder: (context) => const ProductsWidget()),
             );
                                   },
                                   style: OutlinedButton.styleFrom(

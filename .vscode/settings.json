@@ -1,7 +1,9 @@
 {
     "cSpell.words": [
         "cookify",
+        "inventorydetails",
         "loggin",
         "Readex"
-    ]
+    ],
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
