@@ -2,6 +2,7 @@
 import 'package:cookify/products/inventory.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class PhoneAuthWidget extends StatefulWidget {
   const PhoneAuthWidget({Key? key}) : super(key: key);
@@ -12,6 +13,8 @@ class PhoneAuthWidget extends StatefulWidget {
 }
 
 class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
+  final TextEditingController _textEditingController = TextEditingController();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
 
   @override
@@ -134,7 +137,7 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                               children: [
                                 Expanded(
                                   child: TextFormField(
-                                    obscureText: false,
+                                    controller: _textEditingController,
                                     decoration: const InputDecoration(
                                       labelText: 'Your Phone Number...',
                                       labelStyle:TextStyle(
