@@ -16,6 +16,7 @@ class _Otp_screenState extends State<Otp_screen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: const Icon(Icons.arrow_back),
         centerTitle: true,
         title: const Text("OTP Screen", style: TextStyle(
           fontSize: 18
@@ -25,6 +26,7 @@ class _Otp_screenState extends State<Otp_screen> {
       body:  Padding(
         padding: const EdgeInsetsDirectional.fromSTEB(30,20,0,0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text("Verify", style: TextStyle(
               fontSize: 20,
@@ -43,10 +45,39 @@ class _Otp_screenState extends State<Otp_screen> {
                    print("Completed: $value");
                  }
               },
+            ),
+            const SizedBox(height: 30),
+            const Center(
+              child: Text("Didn't receive the code? ", style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w300
+              ),
+              textAlign: TextAlign.center,),
+            ),
+            const SizedBox(height: 60,),
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(15,0,0,0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.black,
+                  minimumSize: const Size(300, 50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)
+                  )
+                ),
+                onPressed: (){}, 
+                child: const Text("Verify", style: TextStyle(fontSize: 16, color: Colors.white),)),
             )
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushNamed(context, '/home');
+        },
+        backgroundColor:  Colors.black,
+        child: const Icon(Icons.arrow_forward),
+      )
     );
   }
 }
