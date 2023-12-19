@@ -1,25 +1,18 @@
 
-
 import 'package:cookify/products/inventory.dart';
-import 'package:cookify/products/inventorydetails.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class PhoneAuthWidget extends StatefulWidget {
   const PhoneAuthWidget({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _PhoneAuthWidgetState createState() => _PhoneAuthWidgetState();
 }
 
 class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
-  final controller = PageController(viewportFraction: 0.8, keepPage: true);
- 
-  @override
-  void initState() {
-   
-  }
+
 
   @override
   void dispose() {
@@ -30,24 +23,6 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
 
   @override
   Widget build(BuildContext context) {
-        final pages = List.generate(
-        3,
-        (index) => Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                color: Colors.grey.shade300,
-              ),
-              margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-              child: Container(
-                height: 250,
-                child: Center(
-                    child: Text(
-                  "Page $index",
-                  style: const TextStyle(color: Colors.green),
-                )),
-              ),
-            )
-            );
     return GestureDetector(
       child: Scaffold(
         backgroundColor: const Color.fromARGB(255, 250, 250, 250),
@@ -160,54 +135,15 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                                 Expanded(
                                   child: TextFormField(
                                     obscureText: false,
-                                    decoration: InputDecoration(
+                                    decoration: const InputDecoration(
                                       labelText: 'Your Phone Number...',
-                                      labelStyle:const TextStyle(
+                                      labelStyle:TextStyle(
                                             fontFamily: 'Outfit',
                                             color: Color(0xFF57636C),
                                             fontSize: 16,
                                             fontWeight: FontWeight.normal,
                                           ),
                                       hintText: '+233 (04) 204-2056',
-                                      hintStyle: const TextStyle(
-                                            fontFamily: 'Outfit',
-                                            color: Color(0xFF57636C),
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.normal,
-                                          ),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
-                                          color: Color(0xFFF1F4F8),
-                                          width: 2,
-                                        ),
-                                        borderRadius: BorderRadius.circular(8),
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 2,
-                                        ),
-                                        borderRadius: BorderRadius.circular(8),
-                                      ),
-                                      errorBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 2,
-                                        ),
-                                        borderRadius: BorderRadius.circular(8),
-                                      ),
-                                      focusedErrorBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 2,
-                                        ),
-                                        borderRadius: BorderRadius.circular(8),
-                                      ),
-                                      filled: true,
-                                      fillColor: Colors.white,
-                                      contentPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
-                                              16, 24, 0, 24),
                                     ),
                                     style: const TextStyle(
                                           fontFamily: 'Outfit',
