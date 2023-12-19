@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:otp_text_field/otp_text_field.dart';
@@ -8,6 +9,32 @@ class Otp_screen extends StatefulWidget {
 
   @override
   State<Otp_screen> createState() => _Otp_screenState();
+}
+
+Future<void> _signInWithPhoneNumber( String verificationId, String smsCode )async {
+
+  try {
+    PhoneAuthCredential credential = PhoneAuthProvider.credential(
+    verificationId: verificationId,
+    smsCode: smsCode,
+  );
+
+//_auth.signInWithCredential(credential) is called to sign in the user using the obtained credential.
+  await _auth.signInWithCredential(credential);
+
+  // Display a success message using a SnackBar
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(content: Text('Sign-in successful!')),
+    );
+
+  } catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(content: Text('Error: $e')),
+    );
+    if (kDebugMode) {
+      print("Failed to verify phone number: $e");
+    }
+  }
 }
 
 // ignore: camel_case_types
