@@ -16,6 +16,62 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
   final TextEditingController _textEditingController = TextEditingController();
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
+  Future<void> _verifyPhoneNumber(BuildContext context) async {
+    try {
+      await _auth.verifyPhoneNumber(
+        phoneNumber: _textEditingController.text,
+        verificationCompleted: (PhoneAuthCredential credential) async {
+          await _auth.signInWithCredential(credential);
+          // ignore: use_build_context_synchronously
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Phone number automatically verified and user signed in: ${_auth.currentUser!.uid}'),
+            ),
+          );
+        },
+        verificationFailed: (FirebaseAuthException e) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Failed to Verify Phone Number: $e'),
+            ),
+          );
+        },
+        codeSent: (String verificationId, int? resendToken) async {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Please check your phone for the verification code.'),
+            ),
+          );
+          const String smsCode = '123456';
+          final PhoneAuthCredential credential = PhoneAuthProvider.credential(verificationId: verificationId, smsCode: smsCode);
+          await _auth.signInWithCredential(credential);
+          // ignore: use_build_context_synchronously
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Phone number automatically verified and user signed in: ${_auth.currentUser!.uid}'),
+            ),
+          );
+        },
+        codeAutoRetrievalTimeout: (String verificationId) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('verification code: $verificationId'),
+            ),
+          );
+        },
+        timeout: const Duration(seconds: 120),
+      );
+
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Failed to Verify Phone Number: $e'),
+        ),
+      );
+    }
+
+  }
+
 
   @override
   void dispose() {
@@ -108,9 +164,7 @@ class _PhoneAuthWidgetState extends State<PhoneAuthWidget> {
                                       size: 24,
                                     ),
                                     onPressed: () {
-                                      if (kDebugMode) {
-                                        print('IconButton pressed ...');
-                                      }
+                                      _verifyPhoneNumber(context);
                                     },
                                   ),
                                 ),
