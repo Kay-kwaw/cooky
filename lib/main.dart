@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:cookify/auth/authenticate.dart';
 import 'package:cookify/auth/phoneAuth.dart';
 import 'package:cookify/products/inventory.dart';
@@ -5,10 +7,10 @@ import 'package:cookify/products/inventorydetails.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-Future<void> main() async  {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-  );
+void main() async  {
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp(
+  // );
   runApp(const MyApp());
 }
 class MyApp extends StatelessWidget {
