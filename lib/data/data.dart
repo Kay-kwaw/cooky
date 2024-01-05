@@ -5,7 +5,7 @@ class Data{
     List<ItemModel> items = [
     ItemModel(
         id: 1,
-        image: "assets/pizza.jpg",
+        image: "assets/pizza_image.png",
         name: "Margarita Pizza ",
         desc:
             "Voluptate incididunt dolor consequat aliquip sit. Duis quis ea velit esse enim ipsum duis cupidatat. Eu sit culpa dolor ipsum ut nostrud irure culpa aliqua irure labore irure id magna.",
@@ -16,7 +16,7 @@ class Data{
         placeholderImage: "assets/chilli.png"),
     ItemModel(
         id: 2,
-        image: "assets/Garlic bread.jpg",
+        image: "assets/PngItem_2269637 1.png",
         desc:
             "Chicken curry with rice is a flavorful dish made by simmering chunks of chicken in a spicy curry sauce and serving it over a bed of steamed rice. The curry sauce is typically made with a blend of aromatic spices and coriander, as well as coconut milk for creaminess.  ",
         price: 11,
@@ -27,7 +27,7 @@ class Data{
         calories: '275 Calories'),
     ItemModel(
         id: 3,
-        image: "assets/Fufu.jpg",
+        image: "assets/PngItem_4744308 1.png",
         desc:
             "Exercitation occaecat consequat quis consequat culpa velit fugiat nostrud enim. Consequat eu laborum enim tempor deserunt fugiat velit amet consequat aute eiusmod minim. Est aute tempor esse laborum sit mollit voluptate non elit aliqua. Dolor est amet est officia do ut.",
         price: 12,
@@ -38,7 +38,7 @@ class Data{
         rating: '4.1'),
     ItemModel(
         id: 4,
-        image: "assets/Poundo yam.jpg",
+        image: "assets/dish.png",
         desc:
             "Exercitation occaecat consequat quis consequat culpa velit fugiat nostrud enim. Consequat eu laborum enim tempor deserunt fugiat velit amet consequat aute eiusmod minim. Est aute tempor esse laborum sit mollit voluptate non elit aliqua. Dolor est amet est officia do ut.",
         price: 9,
