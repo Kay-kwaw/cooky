@@ -1,9 +1,9 @@
 import 'dart:ffi';
 
+import 'package:cookify/models/item_model.dart';
+import 'package:cookify/router/router.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:food_delivery/model/item_model.dart';
-import 'package:food_delivery/router/router.dart';
 import 'package:go_router/go_router.dart';
 
 class SearchPage extends StatefulWidget {
