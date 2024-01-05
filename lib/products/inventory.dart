@@ -1,6 +1,8 @@
 import 'package:cookify/data/data.dart';
 import 'package:cookify/models/catalog_item.dart';
+import 'package:cookify/router/router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -13,10 +15,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int selectedItem = 0;
   List<Catagory> catagory = [
-    Catagory(name: "Main", image: "assets/momo.png"),
-    Catagory(name: "Soups", image: "assets/image 7.png"),
-    Catagory(name: "Salads", image: "assets/cab.png"),
-    Catagory(name: "Drinks", image: "assets/drink.png"),
+    Catagory(name: "Main", image: "assets/Main.jpg"),
+    Catagory(name: "Soups", image: "assets/soup.jpg"),
+    Catagory(name: "Salads", image: "assets/salad.jpg"),
+    Catagory(name: "Drinks", image: "assets/drinks.jpg"),
   ];
   @override
   Widget build(BuildContext context) {
@@ -135,7 +137,7 @@ class _HomePageState extends State<HomePage> {
                 child: Text(
                   "Popular Now ",
                   style: TextStyle(
-                      fontSize: 25,
+                      fontSize: 20,
                       fontWeight: FontWeight.w800,
                       fontFamily: 'Urbanist-Italic'),
                 ),
@@ -144,7 +146,7 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
               child: SizedBox(
-                height: 250,
+                height: 300,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: itemlist.items.length,
@@ -152,8 +154,8 @@ class _HomePageState extends State<HomePage> {
                     var data = itemlist.items[index];
                     return GestureDetector(
                       onTap: () {
-                        // GoRouter.of(context)
-                        //     .pushNamed(Routers.productpage.name, extra: data);
+                        GoRouter.of(context)
+                            .pushNamed(Routers.productpage.name, extra: data);
                       },
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -189,7 +191,7 @@ class _HomePageState extends State<HomePage> {
                                     Text(
                                       "\$${data.price}",
                                       style: const TextStyle(
-                                          fontSize: 24,
+                                          fontSize: 18,
                                           fontWeight: FontWeight.w800,
                                           fontFamily: 'Urbanist-Italic'),
                                     ),
