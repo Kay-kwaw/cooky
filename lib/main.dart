@@ -1,33 +1,29 @@
-import 'dart:ffi';
-
-import 'package:cookify/auth/authenticate.dart';
-import 'package:cookify/auth/phoneAuth.dart';
-import 'package:cookify/products/inventory.dart';
-import 'package:cookify/products/inventorydetails.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:cookify/provider/data_provider.dart';
+import 'package:cookify/router/router.config.dart';
 import 'package:flutter/material.dart';
-void main() async  {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // await Firebase.initializeApp(
-  // );
-  runApp(const MyApp());
+import 'package:provider/provider.dart';
+
+void main() {
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(create: (context) => DataProvider(),)
+  ],child: const MyApp(),));
+  
 }
+
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: ProductsWidget(),
-      // home:  Otp_screen(verificationId: '', onCodeVerified: (PhoneAuthCredential credential) {},),
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.light(useMaterial3: true,),
+      darkTheme: ThemeData.dark(useMaterial3: true),
+      themeMode: ThemeMode.system,
+      routeInformationParser: router.routeInformationParser,
+      routeInformationProvider: router.routeInformationProvider,
+      routerDelegate: router.routerDelegate,
     );
   }
 }
-
