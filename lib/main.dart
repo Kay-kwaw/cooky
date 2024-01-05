@@ -1,5 +1,7 @@
 import 'package:cookify/auth/authenticate.dart';
 import 'package:cookify/auth/phoneAuth.dart';
+import 'package:cookify/products/inventory.dart';
+import 'package:cookify/products/inventorydetails.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +23,8 @@ class MyApp extends StatelessWidget {
         // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  Otp_screen(verificationId: '', onCodeVerified: (PhoneAuthCredential credential) {},),
+      home: ProductsWidget(),
+      // home:  Otp_screen(verificationId: '', onCodeVerified: (PhoneAuthCredential credential) {},),
     );
   }
 }
